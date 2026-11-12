@@ -11,8 +11,9 @@ import tarfile
 
 BASE = Path('/var/www/alongtheway-site')
 STATE = Path('/var/lib/alongtheway-site')
-RAW = 'https://raw.githubusercontent.com/emerytech/alongtheway-site/site-dist/deployment.json'
-ARCHIVE = 'https://codeload.github.com/emerytech/alongtheway-site/tar.gz/refs/heads/site-dist'
+REPOSITORY = 'https://github.com/emerytech/alongtheway-site.git'
+RAW = 'https://raw.githubusercontent.com/emerytech/alongtheway-site'
+ARCHIVE = 'https://codeload.github.com/emerytech/alongtheway-site/tar.gz'
 ALLOWED = {'.html','.css','.xml','.txt','.png','.webp','.jpg','.jpeg','.ico','.json','.svg','.webmanifest'}
 
 def download(url, limit):
@@ -34,7 +35,11 @@ def switch(target):
     os.replace(temporary, BASE/'current')
 
 def main():
-    wanted = revision(download(RAW,4096))
+    result = subprocess.run(['git','ls-remote','--exit-code',REPOSITORY,'refs/heads/site-dist'], check=True, capture_output=True, text=True, timeout=30, env={**os.environ,'GIT_TERMINAL_PROMPT':'0'})
+    artifact = result.stdout.split()[0]
+    if not re.fullmatch('[0-9a-f]{40}',artifact):
+        raise ValueError('Invalid deployment branch revision')
+    wanted = revision(download(RAW+'/'+artifact+'/deployment.json',4096))
     current = BASE/'current'
     if (current/'deployment.json').is_file() and revision((current/'deployment.json').read_bytes()) == wanted:
         print('Already deployed '+wanted)
@@ -44,7 +49,7 @@ def main():
         shutil.rmtree(stage)
     stage.mkdir(parents=True)
     try:
-        data = download(ARCHIVE,30*1024*1024)
+        data = download(ARCHIVE+'/'+artifact,30*1024*1024)
         with tarfile.open(fileobj=io.BytesIO(data),mode='r:gz') as archive:
             members = archive.getmembers()
             if sum(m.size for m in members) > 100*1024*1024 or len(members)>5000:
