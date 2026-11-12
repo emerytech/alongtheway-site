@@ -21,7 +21,13 @@ Along the Way is an app for homeschool families. It is used by parents. This pol
 
 ## Who the app is for
 
-Accounts are made by parents and guardians, who must be adults. Children do not create accounts and the app does not ask a child for any information. A parent may enter information about their own children, as described below. By doing so the parent gives consent for that information to be kept for the family's own use.
+Accounts are made by parents and guardians, who must be adults. Children do not create accounts. A parent may enter information about their own children, as described below. By doing so the parent gives consent for that information to be kept for the family's own use.
+
+### A child's own sign-in
+
+A parent can choose to let one of their children use the app on the child's own tablet or phone. It is off unless the parent switches it on for that child, and the parent can switch it off at any time, which signs the child out everywhere at once. The child signs in with a one-time code the parent gives them. We do not ask the child for an email address, password, birthdate, or any contact information.
+
+A signed-in child can see only their own checklist for the day, their own book log, and the Bible with their own reading progress, highlights, and notes. They can tick off checklist items, add books and book reports, and mark chapters and verses. What they add is kept in the family's records, where the parent can see, change, and delete it. A child's sign-in cannot reach other children's records, the village, other families, photos, location sharing, settings, purchases, or account deletion.
 
 ## What we keep
 
