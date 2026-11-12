@@ -1,6 +1,7 @@
 # Along the Way website
 
-Static marketing and information website for Along the Way. Canonical address:
+Static marketing and information website for Along the Way, hosted in its existing
+Zeus container through Cloudflare Tunnel. Canonical address:
 **https://www.alongtheway.cc**. Intended public repository: **emerytech/alongtheway-site**.
 
 ## Why Astro
@@ -91,7 +92,25 @@ copies. `public/share.png` is the supplied social image. Favicon and touch icons
 from the app icon. NIV Scripture cards are deliberately excluded. The home-page verse
 is Psalm 119:105 in the Berean Standard Bible, labelled BSB.
 
-## Deploy to GitHub Pages
+## Primary deployment: Zeus
+
+The site runs on nginx bound to `127.0.0.1:8080` inside the Along the Way container
+(CT 120 on Zeus). The existing Cloudflare Tunnel routes `www.alongtheway.cc` and
+`alongtheway.cc` to that port. The API keeps its separate port and hostname.
+Cloudflare supplies public HTTPS; the origin hop is loopback HTTP, with no self-signed
+certificate or disabled TLS validation. Root-domain requests redirect to HTTPS www.
+
+Run `bash deploy/deploy-zeus.sh` from this folder after committing the reviewed change.
+It builds and checks the site, transfers only static output, and atomically switches the
+origin’s `current` symlink. Previous release directories remain available for rollback.
+The initial nginx and tunnel provisioning is already installed; the deploy script does
+not alter API settings, database contents or tunnel credentials.
+
+The primary DNS records are proxied CNAMEs for `@` and `www`, both pointing to the existing
+Along the Way tunnel hostname. Preserve API and email records. The A/CNAME records in
+the rollback section below apply only if intentionally moving back to GitHub Pages.
+
+## GitHub Pages rollback deployment
 
 Public repository creation and the first public push require the owner’s approval.
 Prepare and review the local site first. This folder is a standalone website, not a
@@ -141,8 +160,8 @@ Optional IPv6 support uses four DNS-only AAAA records at `@`: `2606:50c0:8000::1
 GitHub domain verification can add a separate TXT record; use the exact value GitHub
 generates for the account, not an invented or copied value.
 
-GitHub Pages logs visitor IP addresses for security. This is disclosed separately from
-the site’s absence of analytics in the draft privacy page.
+The primary website is delivered through Cloudflare Tunnel; origin access logging is disabled.
+Infrastructure/security-log retention remains under review in the draft privacy policy.
 
 ## Before launch
 

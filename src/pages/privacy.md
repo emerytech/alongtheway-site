@@ -70,7 +70,7 @@ Existing backups and operational logs are separate from the live records. Their 
 
 The marketing website has no account forms, analytics scripts, tracking pixels, cookies, embedded third-party media, or third-party font requests. Its images, styles, and fonts are served locally or supplied by your device. Email links open your own email application; messages you send are handled by the email services involved.
 
-When this site is hosted on GitHub Pages, GitHub logs visitors’ IP addresses for security purposes. See [GitHub’s Pages data-collection notice](https://docs.github.com/en/pages/getting-started-with-github-pages/what-is-github-pages#data-collection) and [GitHub’s privacy statement](https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement).
+This website is hosted on the operator’s server and delivered through Cloudflare Tunnel. Cloudflare processes connection information to deliver and protect the site; see [Cloudflare’s privacy policy](https://www.cloudflare.com/privacypolicy/). Website access logging is disabled on the origin web server. Infrastructure and security logs are separate, and their retention remains under owner review.
 
 ## Questions and requests
 
