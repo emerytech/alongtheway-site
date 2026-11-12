@@ -9,7 +9,7 @@ npm run build
 npm run check:site
 revision="$(git rev-parse --short HEAD)"
 release="$(date -u +%Y%m%dT%H%M%SZ)-${revision}"
-tar -C dist -cf - . | ssh root@zeus "pct exec 120 -- bash -c '
+COPYFILE_DISABLE=1 tar --no-xattrs -C dist -cf - . | ssh root@zeus "pct exec 120 -- bash -c '
 set -euo pipefail
 base=/var/www/alongtheway-site
 mkdir -p \"\$base/releases/$release\"
