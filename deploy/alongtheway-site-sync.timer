@@ -1,0 +1,9 @@
+[Unit]
+Description=Check for a new Along the Way website release
+[Timer]
+OnBootSec=20s
+OnUnitInactiveSec=30s
+AccuracySec=2s
+Unit=alongtheway-site-sync.service
+[Install]
+WantedBy=timers.target

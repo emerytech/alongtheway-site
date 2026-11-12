@@ -1,19 +1,15 @@
-name: Deploy website to GitHub Pages
-
+name: Build and publish Zeus website
 on:
   push:
     branches: [main]
   workflow_dispatch:
-
 permissions:
-  contents: read
-
+  contents: write
 concurrency:
-  group: pages
+  group: zeus-website
   cancel-in-progress: false
-
 jobs:
-  build:
+  publish:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v7.0.1
@@ -24,21 +20,21 @@ jobs:
       - run: npm ci
       - run: npm run build
       - run: npm run check:site
-      - uses: actions/configure-pages@v6.0.0
-      - uses: actions/upload-pages-artifact@v5.0.0
-        with:
-          path: dist
-
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
-      - name: Deploy
-        id: deployment
-        uses: actions/deploy-pages@v5.0.1
+      - name: Identify the checked source revision
+        run: node -e 'require("node:fs").writeFileSync("dist/deployment.json", JSON.stringify({revision:process.env.GITHUB_SHA,run:process.env.GITHUB_RUN_ID})+"\n")'
+      - name: Publish static output only
+        shell: bash
+        run: |
+          set -euo pipefail
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          parents=()
+          if git ls-remote --exit-code origin refs/heads/site-dist >/dev/null 2>&1; then
+            git fetch --depth=1 origin site-dist
+            parents=(-p FETCH_HEAD)
+          fi
+          export GIT_INDEX_FILE="$RUNNER_TEMP/website-index"
+          git --work-tree="$PWD/dist" add --all
+          tree=$(git write-tree)
+          commit=$(git commit-tree "$tree" "${parents[@]}" -m "Deploy website from $GITHUB_SHA")
+          git push origin "$commit:refs/heads/site-dist"

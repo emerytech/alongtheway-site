@@ -100,7 +100,12 @@ The site runs on nginx bound to `127.0.0.1:8080` inside the Along the Way contai
 Cloudflare supplies public HTTPS; the origin hop is loopback HTTP, with no self-signed
 certificate or disabled TLS validation. Root-domain requests redirect to HTTPS www.
 
-Run `bash deploy/deploy-zeus.sh` from this folder after committing the reviewed change.
+Automatic deployment runs on pushes to `main`: GitHub-hosted Actions builds and checks
+the website, then publishes only static output to `site-dist`. A dedicated container
+service checks every 30 seconds and atomically activates successful output. No deployment
+secret or self-hosted Actions runner is used. See [deployment operations](deploy/README.md).
+
+For a manual fallback, run `bash deploy/deploy-zeus.sh` after committing the reviewed change.
 It builds and checks the site, transfers only static output, and atomically switches the
 origin’s `current` symlink. Previous release directories remain available for rollback.
 The initial nginx and tunnel provisioning is already installed; the deploy script does
@@ -111,6 +116,10 @@ Along the Way tunnel hostname. Preserve API and email records. The A/CNAME recor
 the rollback section below apply only if intentionally moving back to GitHub Pages.
 
 ## GitHub Pages rollback deployment
+
+The former Pages workflow has been replaced by automatic Zeus deployment. To move back
+to Pages intentionally, restore a Pages workflow as well as its domain/DNS configuration.
+
 
 Public repository creation and the first public push require the owner’s approval.
 Prepare and review the local site first. This folder is a standalone website, not a
