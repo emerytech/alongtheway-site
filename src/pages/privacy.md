@@ -1,79 +1,103 @@
 ---
 layout: ../layouts/PageLayout.astro
 title: Privacy policy.
-footerLabel: Privacy · Draft
+footerLabel: Privacy
 footerOrder: 2
-description: Draft privacy policy describing Along the Way account data, family records, image processing, village sharing, and account deletion.
-intro: A plain-language draft of how the current app handles information.
+description: "What Along the Way keeps about your family, who can see it, how location at meet-ups works, and how to delete it."
+intro: "What the app keeps, why, who can see it, and how to remove it."
 eyebrow: FAMILY PRIVACY
-draft: true
-noindex: true
 ---
 
-> **DRAFT — FOR OWNER AND LEGAL REVIEW.** This document has not been adopted as a final privacy policy and has no effective date. The operator’s legal identity and contact details, applicable privacy obligations, operational-log and backup retention, and procedures for privacy requests still need owner and legal review. It describes the current app implementation, not a certification of compliance.
+**Effective November 12, 2026.** Along the Way is made and operated by **ETS3D LLC**, a Missouri company.
 
-## Information in the app
+Along the Way is an app for homeschool families. It is used by parents. This policy says what the app keeps, why, who can see it, and how to remove it. If anything here is unclear, write to [support@alongtheway.cc](mailto:support@alongtheway.cc).
 
-Along the Way is a parent-operated homeschool app. Parents provide an email address, display name, family name, and, for password accounts, a password. The server stores a password hash rather than the password itself. Apple or Google sign-in uses the relevant provider’s account identifier and email information. An Apple refresh token may be stored for token revocation; Google sign-in tokens are not stored as ongoing account credentials.
+## The short version
 
-The app stores a child’s first name and optional grade level. Its child-profile fields do not request a child’s email address, birthdate, or last name. Child sign-in is not currently built.
+- Your children's records are seen only by your own family.
+- We do not sell your information, show ads, or use it to advertise to you.
+- Other families see only what you choose to share with them, and never a child's name or records.
+- You can delete your account, and everything with it, from inside the app.
 
-The records you choose to enter can include:
+## Who the app is for
 
-- Home state and instruction option, family settings, school-year dates, and custom targets.
-- Subjects, learning dates and duration, children included in an activity, home/away status, lesson descriptions, and notes.
-- Planned lessons and completion links to logged learning time.
-- Optional courses, assignments, grades and earlier grades, and attendance.
-- Keepsake images, lesson-photo attachments, titles, notes, and dates.
-- Bible chapters marked read and their reading dates, for the family or a child.
-- Family join invitations, village connections, referral-credit records, shared village photos, and reports of those photos.
+Accounts are made by parents and guardians, who must be adults. Children do not create accounts and the app does not ask a child for any information. A parent may enter information about their own children, as described below. By doing so the parent gives consent for that information to be kept for the family's own use.
 
-The app also stores account and record identifiers, timestamps, hashed session credentials, and hashed email-verification or password-reset codes. Your mobile device keeps its sign-in credential and Bible translation preference in the device’s secure storage.
+## What we keep
 
-## How information is used
+### About you, the parent
 
-These records are used to operate accounts, authenticate requests, send account-verification and password-reset messages, calculate learning progress, show plans and saved work, record Bible reading, and provide family joining and village connections. Photos are processed for storage and display. Photo reports are stored and used to hide a reported image from the reporting family.
+- Your name as you want it shown, your email address, and a protected (hashed) form of your password. If you sign in with Apple or Google, we keep the identifier they give us instead of a password.
+- Your family's name and home state.
 
-## The Family Wall
+### About your children, entered by you
 
-Children’s academic records, plans, keepsakes, lesson photos, and Bible reading progress are available only through the owning family’s signed-in accounts. Connecting to another family in a village does not grant access to those records.
+- A first name and, if you give one, a grade level. We do not ask for a last name, birthdate, email, or photo of the child for identification.
+- School records you choose to keep: time logged by subject, notes and photos of work, plans, attendance, courses and grades if you turn them on, weekly goals, books read and book reports, Bible reading progress, highlights and notes.
+- Keepsakes: photos of a child's artwork and projects.
 
-Connected families can see a family’s name and its parents’ display names. A village code allows its holder to connect without a separate approval step, so share your code thoughtfully. Either family can remove the connection.
+### Things you share with your village
 
-## Village photos
+- Photos you choose to share, events you plan (title, day, time, place, details, and a pin on the map), your answers to events (a count of adults and children, never names), and "We're here" check-ins.
 
-A parent can deliberately share photos with the family’s village. The sharing family and directly connected families can access them. Village photos can depict children, but the app does not attach a child’s record, name, tag, or caption to a shared photo.
+### Location
 
-Upload processing re-encodes the image as a JPEG and creates a thumbnail. It removes EXIF metadata, including embedded GPS/location information; a colour profile may be preserved. This does not remove information visible in the picture itself, such as a house number, school name, or landmark. The same processing is used for keepsakes and lesson photos.
+The app does not track your location. Two features use it, and only when you act:
 
-Village photos expire after **21 days**. Expired photos stop being available through the app’s photo routes, and a background process removes their stored rows and files. The sharing family can delete a photo sooner. Removing a village connection ends the app’s access permission for the disconnected family.
+- **Share where I am** at a meet-up. It is off until you switch it on for one event, on the day of that event. While it is on and the event is open on your screen, your phone's position is sent so the families invited to that event can find you on its map. It stops when you switch it off or leave the screen. We keep only your latest position, for a few minutes, and no history.
+- **Finding an address on the map** when you plan an event uses your phone's map service to look the address up. Your own position is not read for this.
 
-Other parents may save a copy while a photo is available. The app cannot recall a downloaded copy after deletion, expiry, or disconnection. A photo report hides the image from the reporting family; it is not automatic removal for every family. The owner’s broader report-review process is still under review.
+### Purchases
 
-Keepsakes and lesson-photo attachments are separate from village photos. They are not subject to the village-photo expiry period and remain inside the family until deleted with the relevant record, child, or family.
+If you buy a plan, the purchase is handled by Apple (or Google on Android) and by RevenueCat, a service that tells us whether your family's plan is active. We receive the plan, its dates, and an identifier for your family. We never receive your card number.
 
-## Services involved
+### Technical information
 
-The app uses its hosted API, database, and image storage to provide its features. Cloudflare carries traffic to the API. Resend processes account-verification and password-reset email delivery. Apple and Google process their respective sign-in flows when selected. Those providers’ own privacy practices also apply to their services.
+Our server keeps ordinary logs of requests (time, address, what was requested) to keep the service running and secure. The app has no advertising or analytics trackers.
 
-The operator still needs to finalize the service-provider disclosures, hosting location, log retention, and any relevant international-transfer information before adopting this policy. This draft does not claim that information is end-to-end encrypted or that all operational data is anonymous.
+## Photos
 
-## Retention and deletion
+When you add a photo, the server removes the location and other hidden details from the file before storing it. Photos shared with your village are deleted after 21 days. Keepsakes and photos attached to logged time stay until you delete them.
 
-Records generally stay in the live app until you delete them or the relevant parent, child, or family is removed. Village photos have the expiry described above. Session credentials and emailed codes have expiry times; expiry does not by itself establish when all historical database rows are purged.
+## Who can see what
 
-Use **Settings → Delete account** to delete your parent account. If another parent remains, your family’s shared records and photos remain. If you are the last parent, deletion removes the family’s live records and associated stored image files. See the [complete deletion instructions](/delete-account/).
+- **Your family:** every parent on your family's account sees all of the family's records.
+- **Families in your village:** your family name, the parents' display names, photos and events you share with them, your headcount for an event, your check-in, and your position if you switch sharing on for that event. They never see a child's name, grade, records, keepsakes, or book reports.
+- **Everyone else:** nothing. Families cannot be searched for; a connection is made only by giving someone your code.
+- **Us:** the people who run the service can reach the stored information to operate it, fix problems, act on a report, or answer a request from you. We do not read it for any other purpose.
 
-Existing backups and operational logs are separate from the live records. Their retention and deletion procedures have not yet been finalized for this policy. This draft therefore does not promise immediate erasure from every backup, provider system, or device that received a downloaded copy.
+## Companies that help us run the service
 
-## This website
+- Apple and Google: sign-in, if you choose it, and purchases.
+- RevenueCat: the status of your family's plan.
+- Resend: sending you emails such as verification and reset codes.
+- Cloudflare: carrying traffic to our server, and holding encrypted backups. The backups are encrypted before they leave our server; Cloudflare cannot read them.
 
-The marketing website has no account forms, analytics scripts, tracking pixels, cookies, embedded third-party media, or third-party font requests. Its images, styles, and fonts are served locally or supplied by your device. Email links open your own email application; messages you send are handled by the email services involved.
+We do not sell personal information, and we do not share it with advertisers or data brokers.
 
-This website is hosted on the operator’s server and delivered through Cloudflare Tunnel. Cloudflare processes connection information to deliver and protect the site; see [Cloudflare’s privacy policy](https://www.cloudflare.com/privacypolicy/). Website access logging is disabled on the origin web server. Infrastructure and security logs are separate, and their retention remains under owner review.
+## Keeping it safe
 
-## Questions and requests
+Information travels over an encrypted connection. Passwords are stored only in hashed form. Backups are encrypted. No system is perfectly secure; if we learn of a breach that affects you, we will tell you.
 
-Contact **[support@alongtheway.cc](mailto:support@alongtheway.cc)** with questions or to ask for help accessing or deleting records. The owner still needs to finalize identity-verification procedures and any legally required response deadlines. Please do not send passwords, sign-in codes, children’s private records, or photos in an initial message.
+## Deleting and keeping
 
-Before adoption, this draft needs review of children’s privacy, consent and notices, applicable access/deletion rights, retention, and the operator’s legal details. It does not state that those processes are already implemented.
+- You can delete any entry, photo, keepsake, book, or child's record in the app. It is removed from our server at once.
+- You can delete your account in the app (Settings, Delete account). To protect you from a mistake or someone else using your phone, the account is first held for 30 days, during which you can restore it. After 30 days it is permanently deleted. If you are the only parent on the family's account, the family and all of its records are deleted with it.
+- Backups are kept for up to 90 days and then deleted. A deleted account may remain in an encrypted backup until that backup expires.
+- Positions shared at a meet-up are kept for minutes. Check-ins are removed after the day following the event.
+
+## Your choices and rights
+
+You can see and change your family's information in the app. You can ask us for a copy of it, ask us to correct it, or ask us to delete it by writing to [support@alongtheway.cc](mailto:support@alongtheway.cc) from your account's email address. A parent may at any time review or delete the information kept about their child and refuse any further collection, by deleting the child's record or the account.
+
+## Reports
+
+If a family reports a photo or event, we receive the report with the item and the names of the two families involved so we can look at it and act.
+
+## Changes
+
+If this policy changes in a way that matters, we will tell you in the app or by email before the change takes effect.
+
+## Contact
+
+[support@alongtheway.cc](mailto:support@alongtheway.cc)

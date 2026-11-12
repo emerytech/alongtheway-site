@@ -77,7 +77,7 @@ schemes. New pages are included in those checks automatically.
 - `/features/`: Built features and a separate Coming later section.
 - `/support/`: Contact and FAQ.
 - `/delete-account/`: In-app steps and the distinction between parent and family deletion.
-- `/privacy/` and `/terms/`: Clearly labelled drafts for owner/legal review, with no effective date.
+- `/privacy/` and `/terms/`: Adopted by the owner on 2026-11-12 (operator ETS3D LLC, Missouri law). Written from what the app does; not reviewed by a lawyer.
 - `/404.html`: GitHub Pages error page.
 
 Keep marketing statements limited to verified built behaviour. State information must

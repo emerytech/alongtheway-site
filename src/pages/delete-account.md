@@ -3,32 +3,30 @@ layout: ../layouts/PageLayout.astro
 title: Delete my account.
 footerLabel: Delete my account
 footerOrder: 4
-description: How to delete an Along the Way account in the app, and what happens to shared family records.
-intro: You can start account deletion from Settings inside Along the Way.
+description: "How to delete an Along the Way account in the app, the 30 days in which it can be restored, and what is deleted."
+intro: "You can delete your account from Settings inside Along the Way."
 eyebrow: YOUR ACCOUNT
 ---
 
-## Delete your account in the app
+You can delete your Along the Way account, and the information kept with it, from inside the app.
 
-1. Open **Along the Way** and sign in to the account you want to delete.
-2. Open the **Settings** tab.
-3. Tap **Delete account**.
-4. If the app asks for your password, enter the password for your account. Accounts without a password do not show this field.
-5. Tap **Delete account permanently**.
-6. Read the confirmation and tap **Delete account** to finish, or **Cancel** to keep the account.
+## In the app
 
-Deleting the app from your phone does **not** delete your account.
+1. Open Along the Way and go to **Settings**.
+2. Scroll to the bottom and tap **Delete account**.
+3. Tap **Email me a code**, then enter the code from the email and your password.
+4. Tap **Delete my account** and confirm.
 
-## What happens to the data?
+## What happens
 
-**If another parent remains in your family:** your parent account and its sign-in sessions are deleted. The family’s shared records and photos remain available to the remaining parent. Deleting your account does not remove that parent’s access to the family.
+- You are signed out everywhere at once, and your family disappears from every village it was in.
+- For 30 days the account can be restored from the sign-in screen ("Restore a deleted account").
+- After 30 days your sign-in is permanently deleted. If you were the only parent on the family's account, the family, its children's records, photos, keepsakes, and everything else are permanently deleted too.
+- Encrypted backups are deleted within 90 days.
+- A subscription is not cancelled by deleting the account. Cancel it in your Apple or Google account settings.
 
-**If you are the last parent:** your family and its live family-owned records are deleted. This includes child profiles, learning-time entries, plans, courses, assignments, grades and grade history, attendance, Bible reading progress, keepsakes, village connections, and shared-photo records. Associated village-photo, keepsake, and lesson-photo files are also removed from the live app storage.
+## If you cannot get into the app
 
-Copies someone has already downloaded are outside the app’s control and cannot be recalled. Account deletion does not promise immediate removal from existing backups or operational logs; those retention details remain under review in the [draft privacy policy](/privacy/#retention-and-deletion).
+Write to [support@alongtheway.cc](mailto:support@alongtheway.cc) from the email address on the account and ask us to delete it.
 
-## Can’t sign in?
-
-For a password account, use **Forgot password?** on the sign-in screen. If you still cannot access the account, email **[support@alongtheway.cc](mailto:support@alongtheway.cc)** for help. Please don’t send a password, verification code, private family record, or photo.
-
-This website does not perform account deletion. The steps above describe the controls inside the app.
+Deleting the app from your phone does **not** delete your account. This website does not perform account deletion; the steps above describe the controls inside the app.

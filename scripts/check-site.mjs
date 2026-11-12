@@ -44,8 +44,10 @@ for (const filename of htmlFiles) {
 }
 for (const legal of ['privacy', 'terms']) {
   const html = await readFile(path.join(root, legal, 'index.html'), 'utf8');
-  assert.match(html, /DRAFT/);
-  assert.match(html, /noindex, follow/);
+  // Adopted by the owner on 2026-11-12: each carries an effective date and the operator's name.
+  assert.match(html, /Effective November 12, 2026/);
+  assert.match(html, /ETS3D LLC/);
+  assert.doesNotMatch(html, /DRAFT/);
 }
 for (const file of files.filter(p => /\.(css|html)$/.test(p))) {
   const text = await readFile(file, 'utf8');
@@ -56,4 +58,4 @@ const sitemap = (await Promise.all(files.filter(p => /sitemap.*\.xml$/.test(p)).
 for (const url of ['/', '/features/', '/support/', '/privacy/', '/terms/', '/delete-account/']) assert(sitemap.includes(`https://www.alongtheway.cc${url}<`), `Sitemap missing ${url}`);
 assert(!sitemap.includes('/404'));
 assert.match(await readFile(path.join(root, 'robots.txt'), 'utf8'), /Sitemap: https:\/\/www\.alongtheway\.cc\/sitemap-index\.xml/);
-console.log(`Passed: ${htmlFiles.length} pages; internal links and anchors; local images; headings; draft labels; sitemap; no scripts, trackers, storage or credential patterns.`);
+console.log(`Passed: ${htmlFiles.length} pages; internal links and anchors; local images; headings; legal pages dated and named; sitemap; no scripts, trackers, storage or credential patterns.`);

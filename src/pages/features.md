@@ -62,7 +62,7 @@ Switch Bible reading on in Settings when it fits your family. It starts switched
 
 Connect with another homeschool family using a village code. Your village shows connected families and their parents’ display names. Either family can remove a connection.
 
-Parents can choose photos to share with their connected families. These photos are separate from academic records: they have no captions, child-name fields, tags, or links to a child’s record. Connected families may save a copy before a photo expires. See the [draft privacy policy](/privacy/#village-photos) for visibility and retention details.
+Parents can choose photos to share with their connected families. These photos are separate from academic records: they have no captions, child-name fields, tags, or links to a child’s record. Connected families may save a copy before a photo expires. See the [draft privacy policy](/privacy/#photos) for visibility and retention details.
 
 Your children’s learning records, keepsakes, and Bible reading progress stay inside your family.
 
