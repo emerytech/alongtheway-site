@@ -27,6 +27,8 @@ Accounts are made by parents and guardians, who must be adults. Children do not 
 
 A parent can choose to let one of their children use the app on the child's own tablet or phone. It is off unless the parent switches it on for that child, and the parent can switch it off at any time, which signs the child out everywhere at once. The child signs in with a one-time code the parent gives them. We do not ask the child for an email address, password, birthdate, or any contact information.
 
+A parent can also set up a tablet the children share. The parent does this once, with their own password or a one-time setup code from their own app. The tablet does not keep the parent's password or the parent's sign-in. It then shows the first names of that family's children, and each child taps their own name. A parent may set a short PIN for a child, which we keep in a scrambled form; it is a simple gate between brothers and sisters, not a security lock. A parent can sign every such tablet out from their own app, and taking a tablet out of this mode needs a parent's password. The same limits below apply on a shared tablet.
+
 A signed-in child can see only their own checklist for the day, their own book log, and the Bible with their own reading progress, highlights, and notes. They can tick off checklist items, add books and book reports, and mark chapters and verses. What they add is kept in the family's records, where the parent can see, change, and delete it. A child's sign-in cannot reach other children's records, the village, other families, photos, location sharing, settings, purchases, or account deletion.
 
 ## What we keep
