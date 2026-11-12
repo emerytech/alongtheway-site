@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+interface Props { title?: string; description: string; noindex?: boolean; }
+const { title, description, noindex = false } = Astro.props;
+const pageTitle = title ? `${title} · Along the Way` : 'Along the Way · Your homeschool village';
+const canonical = new URL(Astro.url.pathname, Astro.site);
+const pages = Object.values(import.meta.glob('../pages/*.md', { eager: true })) as any[];
+const nav = pages.filter(p => p.frontmatter.navOrder).sort((a, b) => a.frontmatter.navOrder - b.frontmatter.navOrder);
+const footer = pages.filter(p => p.frontmatter.footerOrder).sort((a, b) => a.frontmatter.footerOrder - b.frontmatter.footerOrder);
+const current = (url: string) => Astro.url.pathname === url;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#FBF5E6" media="(prefers-color-scheme: light)" />
+    <meta name="theme-color" content="#1B1510" media="(prefers-color-scheme: dark)" />
+    <title>{pageTitle}</title>
+    <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+    <link rel="canonical" href={canonical} />
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Along the Way" />
+    <meta property="og:title" content={pageTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={new URL('/share.png', Astro.site)} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Along the Way — Your homeschool village. Illustrated families walk between homes along a shared path." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={pageTitle} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={new URL('/share.png', Astro.site)} />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <header class="site-header wrap">
+      <a class="brand" href="/" aria-label="Along the Way home">
+        <img src="/art/brand-icon.webp" width="48" height="48" alt="" />
+        <span>Along the Way<span class="brand-small">YOUR HOMESCHOOL VILLAGE</span></span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="/" aria-current={current('/') ? 'page' : undefined}>Home</a>
+        {nav.map(p => <a href={p.url} aria-current={current(p.url) ? 'page' : undefined}>{p.frontmatter.navLabel ?? p.frontmatter.title}</a>)}
+      </nav>
+    </header>
+    <main id="main" tabindex="-1"><slot /></main>
+    <footer class="site-footer">
+      <div class="wrap footer-top">
+        <div><a class="footer-brand" href="/">Along the Way</a><p>A little light for the journey.</p></div>
+        <nav aria-label="Footer navigation">{footer.map(p => <a href={p.url}>{p.frontmatter.footerLabel ?? p.frontmatter.title}</a>)}</nav>
+      </div>
+      <div class="wrap footer-bottom"><p>© {new Date().getFullYear()} Along the Way</p><p>In TestFlight · Coming soon to the App Store</p>
+        <fieldset class="theme-picker"><legend>Appearance</legend><label><input id="theme-system" type="radio" name="theme" value="system" checked /> Device</label><label><input id="theme-light" type="radio" name="theme" value="light" /> Light</label><label><input id="theme-dark" type="radio" name="theme" value="dark" /> Dark</label></fieldset>
+      </div>
+    </footer>
+  </body>
+</html>

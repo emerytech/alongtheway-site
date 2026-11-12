@@ -1,0 +1,25 @@
+---
+import SiteLayout from './SiteLayout.astro';
+const { frontmatter } = Astro.props;
+---
+<SiteLayout title={frontmatter.title} description={frontmatter.description} noindex={frontmatter.noindex}>
+  <header class:list={['page-heading', 'wrap', { 'with-art': frontmatter.art }]}>
+    <div>
+      <p class="eyebrow">{frontmatter.eyebrow ?? 'ALONG THE WAY'}</p>
+      <h1>{frontmatter.title}</h1>
+      <p class="page-intro">{frontmatter.intro ?? frontmatter.description}</p>
+      {frontmatter.draft && <p class="draft-label">DRAFT · For owner and legal review · Not a finalized policy</p>}
+    </div>
+    {frontmatter.art && <img class="page-art" src={frontmatter.art} width="640" height="480" alt={frontmatter.artAlt ?? ''} fetchpriority="high" />}
+  </header>
+  <div class:list={['page-body', 'wrap', { 'feature-body': frontmatter.wide }]}>
+    <article class="prose"><slot /></article>
+    <aside class="page-aside" aria-label="Get in touch">
+      <span class="small-sun" aria-hidden="true">◒</span>
+      <h2>A little help<br /> along the way.</h2>
+      <p>Have a question about the app? We’d like to hear from you.</p>
+      <a href="mailto:support@alongtheway.cc">support@alongtheway.cc<span aria-hidden="true"> ↗</span></a>
+      <a class="aside-link" href="/support/">Visit support <span aria-hidden="true">→</span></a>
+    </aside>
+  </div>
+</SiteLayout>
