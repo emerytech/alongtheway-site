@@ -10,13 +10,21 @@ art: /art/progress.webp
 artAlt: An illustrated winding path with milestone stones leads over olive hills toward the sun.
 ---
 
-> **A first look.** Along the Way is in TestFlight. These features describe the app in development; the latest test build may not contain every feature shown. Coming soon to the App Store.
+> **A first look.** Along the Way is in a free pilot through TestFlight. These features describe the app in development, and a test build may differ. [Join the pilot →](/pilot/)
 
 ## Learning time
 
 Record the subject, length, day, and children taking part in a learning activity. Mark whether it happened at home, add a lesson description or notes, and attach photos of the work. An activity can count for more than one child.
 
 See time by subject and progress for each child’s school year. Open a logged entry to make a correction, or set your own targets.
+
+### Weekly goals
+
+Set how much time a week you’d like for a subject, and see the week fill in day by day on each child’s page.
+
+### An hours record to print or keep
+
+Make a PDF for a child’s school year: total hours against your targets, hours by subject, school days by quarter, and, if you want it, the daily log. It is made on your phone and handed to you to print, save, or send. The app doesn’t send it anywhere.
 
 ### Core and Non-Core subjects
 
@@ -58,13 +66,33 @@ Switch Bible reading on in Settings when it fits your family. It starts switched
 
 ---
 
+## Book log
+
+Keep a list of the books each child is reading and has finished, with the author, the date finished, and a short report in their own words.
+
+## A child’s own checklist
+
+A parent can let a child see their own day: the plan to tick off, their books, and the Bible reader if your family uses it. Nothing else. Switch it on for one child with a code for their own device, or set up a shared **kids’ tablet** once, where each child taps their own name. An optional PIN keeps siblings out of each other’s profiles; it is a privacy gate between children, not a security lock.
+
+A child never sees the village, another family, settings, or billing.
+
+---
+
 ## Your village
 
 Connect with another homeschool family using a village code. Your village shows connected families and their parents’ display names. Either family can remove a connection.
 
 Parents can choose photos to share with their connected families. These photos are separate from academic records: they have no captions, child-name fields, tags, or links to a child’s record. Connected families may save a copy before a photo expires. See the [draft privacy policy](/privacy/#photos) for visibility and retention details.
 
+### Events and meet-ups
+
+Plan a field trip or get-together, share it with the families you choose, and see who is coming by headcount. The host can set a pin for the meeting place. On the day, a parent may choose to share where their own phone is with the invited families while the event is open. It is off every time until switched on, and the app never tracks location in the background.
+
 Your children’s learning records, keepsakes, and Bible reading progress stay inside your family.
+
+## Getting started
+
+A new family is walked through a few short steps: home state, children, school year, village, and Bible reading. Each can be skipped. A short list on the Children tab then points to what to try next, and ticks itself off as you go.
 
 ## Family join
 
@@ -82,14 +110,13 @@ For families who want it, courses, assignments, grades, grade history, and atten
 
 These are planned rather than available features:
 
-- Parent-controlled child sign-in.
+- An Android version.
+- Guidance for more states.
+- Messages between families in your village.
 - Calendars shared with selected families in your village.
-- Book logs and book reports.
-- Village posts, comments, events, and RSVPs.
 - Bible reading plans, bookmarks, and other reading tools.
-- Report exports, including hours summaries and report cards.
-- Subscriptions and billing.
+- Report cards.
 
-No release dates or prices are announced here.
+The pilot is free. No release dates or prices are announced here.
 
 [Have a question? Visit support →](/support/)
