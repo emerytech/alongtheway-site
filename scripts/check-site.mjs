@@ -19,7 +19,19 @@ for (const filename of htmlFiles) {
   assert.match(html, /property="og:image"/, `${filename}: share image`);
   assert.match(html, /rel="canonical"/, `${filename}: canonical URL`);
   assert.doesNotMatch(html, /<script\b/i, `${filename}: static pages must have no scripts`);
-  assert.doesNotMatch(html, /<iframe\b|<form\b|fonts\.google|googletagmanager|google-analytics|cloudflareinsights|NIV|api\.alongtheway\.cc/i, `${filename}: disallowed dependency or content`);
+  // The contact (support) and pilot pages carry a plain, no-JavaScript form that posts to
+  // the app API. Every other page stays form-free, and no page may reach the API any other way.
+  const formsAllowed = /(^|\/)(support|pilot)\/index\.html$/.test(path.relative(root, filename));
+  const banned = formsAllowed
+    ? /<iframe\b|fonts\.google|googletagmanager|google-analytics|cloudflareinsights|NIV/i
+    : /<iframe\b|<form\b|fonts\.google|googletagmanager|google-analytics|cloudflareinsights|NIV|api\.alongtheway\.cc/i;
+  assert.doesNotMatch(html, banned, `${filename}: disallowed dependency or content`);
+  if (formsAllowed) {
+    for (const form of html.matchAll(/<form\b[^>]*>/g)) {
+      assert.match(form[0], /\baction="https:\/\/api\.alongtheway\.cc\/[a-z-]+"/, `${filename}: a form must post to the app API`);
+      assert.match(form[0], /\bmethod="post"/i, `${filename}: a form must use POST`);
+    }
+  }
   for (const image of html.matchAll(/<img\b[^>]*>/g)) {
     assert.match(image[0], /\balt="[^"]*"/, `${filename}: every image needs an alt attribute`);
     assert.match(image[0], /\bwidth="\d+"/, `${filename}: every image needs a width`);

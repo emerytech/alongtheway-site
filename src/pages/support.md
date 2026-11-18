@@ -12,7 +12,15 @@ eyebrow: SUPPORT & QUESTIONS
 
 ## Get in touch
 
-Email **[support@alongtheway.cc](mailto:support@alongtheway.cc)**.
+Send a message and we’ll reply by email. Or write to **[support@alongtheway.cc](mailto:support@alongtheway.cc)** directly.
+
+<form class="form" method="post" action="https://api.alongtheway.cc/contact">
+<label class="field"><span>Your name</span><input type="text" name="name" required maxlength="100" autocomplete="name" /></label>
+<label class="field"><span>Your email</span><input type="email" name="email" required maxlength="200" autocomplete="email" /></label>
+<label class="field"><span>Message</span><textarea name="message" required maxlength="4000" rows="6"></textarea></label>
+<label class="hp" aria-hidden="true">Leave this field empty<input type="text" name="website" tabindex="-1" autocomplete="off" /></label>
+<p class="form-actions"><button type="submit">Send message</button></p>
+</form>
 
 For a problem with the app, include your app version, phone model, and a description of what happened. Share the wording of an error if you can. Please leave children’s names, family records, private photos, passwords, and sign-in codes out of your message or screenshots.
 
