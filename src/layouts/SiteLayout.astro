@@ -47,6 +47,7 @@ const current = (url: string) => Astro.url.pathname === url;
       <nav aria-label="Main navigation">
         <a href="/" aria-current={current('/') ? 'page' : undefined}>Home</a>
         {nav.map(p => <a href={p.url} aria-current={current(p.url) ? 'page' : undefined}>{p.frontmatter.navLabel ?? p.frontmatter.title}</a>)}
+        <a class="login-button" href="https://app.alongtheway.cc/sign-in">Log in</a>
       </nav>
     </header>
     <main id="main" tabindex="-1"><slot /></main>
@@ -61,3 +62,25 @@ const current = (url: string) => Astro.url.pathname === url;
     </footer>
   </body>
 </html>
+
+<style>
+  .site-header nav {
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: clamp(.75rem, 3vw, 1.875rem);
+  }
+  .site-header nav a.login-button {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+    padding: .45rem 1rem;
+    border-radius: .6rem;
+    background: var(--ink);
+    color: var(--bg);
+    font-weight: 650;
+    white-space: nowrap;
+  }
+  .site-header nav a.login-button:hover {
+    text-decoration: underline;
+  }
+</style>
