@@ -56,7 +56,7 @@ const current = (url: string) => Astro.url.pathname === url;
         <div><a class="footer-brand" href="/">Along the Way</a><p>A little light for the journey.</p></div>
         <nav aria-label="Footer navigation">{footer.map(p => <a href={p.url}>{p.frontmatter.footerLabel ?? p.frontmatter.title}</a>)}</nav>
       </div>
-      <div class="wrap footer-bottom"><p>© {new Date().getFullYear()} Along the Way</p><p>In TestFlight · Coming soon to the App Store</p>
+      <div class="wrap footer-bottom"><p>© {new Date().getFullYear()} Along the Way</p><p>Available on iPhone and iPad</p>
         <fieldset class="theme-picker"><legend>Appearance</legend><label><input id="theme-system" type="radio" name="theme" value="system" checked /> Device</label><label><input id="theme-light" type="radio" name="theme" value="light" /> Light</label><label><input id="theme-dark" type="radio" name="theme" value="dark" /> Dark</label></fieldset>
       </div>
     </footer>

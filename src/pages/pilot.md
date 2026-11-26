@@ -1,8 +1,6 @@
 ---
 layout: ../layouts/PageLayout.astro
 title: Walk with us early.
-navLabel: Join the pilot
-navOrder: 3
 description: Join the free Along the Way pilot on iPhone and iPad through TestFlight, and help shape a homeschool app for families.
 intro: A small, free pilot for homeschool families who don’t mind a few rough edges and are willing to tell us what they find.
 eyebrow: THE PILOT

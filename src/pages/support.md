@@ -30,7 +30,7 @@ We haven’t published a response-time commitment.
 
 <details>
 <summary>Where can I download the app?</summary>
-<p>Along the Way is in a free pilot on iPhone and iPad through TestFlight. <a href="/pilot/">Ask for a pilot invite</a>. It is coming soon to the App Store; there is no public App Store download link yet.</p>
+<p><a href="https://apps.apple.com/us/app/id6833745201">Download Along the Way on the U.S. App Store</a> for iPhone or iPad.</p>
 </details>
 
 <details>

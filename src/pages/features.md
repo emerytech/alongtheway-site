@@ -10,7 +10,7 @@ art: /art/progress.webp
 artAlt: An illustrated winding path with milestone stones leads over olive hills toward the sun.
 ---
 
-> **A first look.** Along the Way is in a free pilot through TestFlight. These features describe the app in development, and a test build may differ. [Join the pilot →](/pilot/)
+> [Download Along the Way for iPhone and iPad →](https://apps.apple.com/us/app/id6833745201)
 
 ## Learning time
 
@@ -117,6 +117,6 @@ These are planned rather than available features:
 - Bible reading plans, bookmarks, and other reading tools.
 - Report cards.
 
-The pilot is free. No release dates or prices are announced here.
+Along the Way is available on the U.S. App Store.
 
 [Have a question? Visit support →](/support/)
